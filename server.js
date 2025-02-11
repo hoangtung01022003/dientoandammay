@@ -10,11 +10,10 @@ app.use(express.static("public"));
 
 // Kết nối PostgreSQL
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_DATABASE,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false // Bắt buộc khi kết nối đến Render PostgreSQL
+  }
 });
 
 // Route chính
