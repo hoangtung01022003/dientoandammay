@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kết quả Tìm kiếm</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Kết quả cho "<%= req.query.term %>"</h1>
+    <% if (products.length > 0) { %>
+        <ul>
+            <% products.forEach(product => { %>
+                <li>
+                    <h3><%= product.name %></h3>
+                    <p>Giá: $<%= product.price %></p>
+                    <p><%= product.description %></p>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Không tìm thấy sản phẩm</p>
+    <% } %>
+    <a href="/">Quay lại</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quản lý Sản phẩm</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Quản lý Sản phẩm</h1>
+    
+    <!-- Form thêm sản phẩm -->
+    <form action="/add-product" method="POST">
+        <input type="text" name="name" placeholder="Tên sản phẩm" required>
+        <input type="number" name="price" placeholder="Giá" step="0.01" required>
+        <textarea name="description" placeholder="Mô tả"></textarea>
+        <button type="submit">Thêm</button>
+    </form>
+
+    <!-- Form tìm kiếm -->
+    <form action="/search" method="GET">
+        <input type="text" name="term" placeholder="Tìm sản phẩm...">
+        <button type="submit">Tìm kiếm</button>
+    </form>
+</body>
+</html>
