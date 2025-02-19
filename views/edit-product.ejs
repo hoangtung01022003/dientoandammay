@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chỉnh sửa sản phẩm</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Chỉnh sửa sản phẩm</h1>
+    
+    <form action="/update-product/<%= product.id %>" method="POST">
+        <input type="text" name="name" value="<%= product.name %>" required>
+        <input type="number" name="price" value="<%= product.price %>" step="0.01" required>
+        <textarea name="description"><%= product.description %></textarea>
+        <button type="submit">Cập nhật</button>
+    </form>
+
+    <a href="/">Quay lại</a>
+</body>
+</html>

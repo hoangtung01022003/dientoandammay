@@ -20,5 +20,26 @@
         <input type="text" name="term" placeholder="Tìm sản phẩm...">
         <button type="submit">Tìm kiếm</button>
     </form>
+
+    <h2>Danh sách sản phẩm</h2>
+    <% if (products.length > 0) { %>
+        <ul>
+            <% products.forEach(product => { %>
+                <li class="product-item">
+                    <h3><%= product.name %></h3>
+                    <p>Giá: $<%= product.price %></p>
+                    <p><%= product.description %></p>
+                    <div class="actions">
+                        <a href="/edit-product/<%= product.id %>" class="edit-btn">Sửa</a>
+                        <form action="/delete-product/<%= product.id %>" method="POST" style="display:inline;">
+                            <button type="submit" class="delete-btn">Xóa</button>
+                        </form>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Không có sản phẩm nào</p>
+    <% } %>
 </body>
 </html>
